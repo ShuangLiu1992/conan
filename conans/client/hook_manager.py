@@ -23,7 +23,7 @@ def pre_export(output, conanfile, conanfile_path, reference, **kwargs):
 valid_hook_methods = ["pre_export", "post_export",
                       "pre_source", "post_source",
                       "pre_build", "post_build",
-                      "pre_package", "post_package",
+                      "pre_package", "post_package", "post_packaged",
                       "pre_upload", "post_upload",
                       "pre_upload_recipe", "post_upload_recipe",
                       "pre_upload_package", "post_upload_package",
