@@ -553,6 +553,8 @@ class BinaryInstaller(object):
                     layout.package_remove(pref)
                     with layout.set_dirty_context_manager(pref):
                         pref = self._build_package(node, output, keep_build, remotes)
+                    self._hook_manager.execute("post_packaged", node=node)
+                    
                     assert node.prev, "Node PREV shouldn't be empty"
                     assert node.pref.revision, "Node PREF revision shouldn't be empty"
                     assert pref.revision is not None, "PREV for %s to be built is None" % str(pref)
